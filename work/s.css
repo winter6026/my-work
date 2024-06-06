@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+  
+  header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top:0;
+    height: 48px;
+    background-color: rgba(82, 90, 211, 0.5); /* 半透明底色 */
+    
+    padding: 4px 32px; /* header 內部的 padding: 上下 4px, 左右 32px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .icon {
+    /* 圖標樣式*/
+    font-size: 30px; /* 圖標大小 */
+    color: #333; /* 圖標顏色*/
+  }
+  
+  .nav {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-item {
+    /* 文字樣式 */
+    font-size: 16px; /* 文字大小 */
+    color: #333;
+    text-align: left;
+    white-space: nowrap;
+  
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: center; /* 讓裡面的元素水平置中 */
+    height: 36px; /* 設定容器的高度 */
+    line-height: 36px; /* 讓文字垂直置中 */
+  }
+  
+  picture {
+    margin-right: 10px;
+  }
+  
+  main {
+    padding-top: 56px;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    /* 平板 */
+    .nav {
+      display: block;
+    }
+    .nav-item {
+      font-size: 14px; /* 文字大小 */
+      white-space: nowrap;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    /* 手機*/
+    .nav-item {
+      font-size: 10px; /* 文字大小*/
+      white-space: nowrap;
+    }
+    .logo-container span{
+      visibility: hidden;
+    }
+  }
+  
