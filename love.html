@@ -23,12 +23,25 @@
     #animateButton {
       z-index: 1;
       position: relative;
+      padding: 20px 40px;
+      font-size: 24px;
+      cursor: pointer;
+      background-color: #FF4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    #animateButton:hover {
+      transform: scale(1.1);
     }
 
     .heart {
       position: absolute;
-      width: 16px;
-      height: 16px;
+      width: 32px;
+      height: 32px;
       pointer-events: none;
       transform: scale(0);
     }
@@ -77,24 +90,20 @@
       `;
       heartSvg.classList.add('heart', 'animate');
 
-      
       const x = Math.random() * 100 - 50;
-      const y = Math.random() * -150 - 50; 
+      const y = Math.random() * -150 - 50;
       heartSvg.style.setProperty('--x', `${x}px`);
       heartSvg.style.setProperty('--y', `${y}px`);
 
-      
-      const top = rect.top + window.scrollY - 20; 
-      const left = rect.left + window.scrollX + rect.width / 2 - 8;
+      const top = rect.top + window.scrollY - 20;
+      const left = rect.left + window.scrollX + rect.width / 2 - 16;
 
-      
       heartSvg.style.position = 'fixed';
       heartSvg.style.left = `${left}px`;
       heartSvg.style.top = `${top}px`;
 
       container.appendChild(heartSvg);
 
-      
       setTimeout(() => {
         heartSvg.remove();
       }, 1000);
